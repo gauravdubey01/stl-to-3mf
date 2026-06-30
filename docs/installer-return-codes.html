@@ -3,17 +3,20 @@
 <head><meta charset="UTF-8"><title>STL to 3MF Converter — Installer Return Codes</title></head>
 <body>
 <h1>Installer Return Codes</h1>
-<p>The STL to 3MF Converter installer is built with <strong>Inno Setup 6</strong>.</p>
-<p>Inno Setup exits with the following standard codes. Scenarios not listed below (e.g. disk full, network failure) are reported generically as code 1, since Inno Setup does not emit distinct codes for those conditions — they appear in the installation log.</p>
+<p>The STL to 3MF Converter installer is built with <strong>Inno Setup 6</strong>. The following exit codes are defined:</p>
 
 <table border="1" cellpadding="6" style="border-collapse:collapse">
 <tr><th>Code</th><th>Scenario</th><th>Description</th></tr>
 <tr><td>0</td><td>Installation successful</td><td>Installer completed without errors</td></tr>
-<tr><td>1</td><td>Installation failed</td><td>Generic failure — includes cancelled by user, application already exists, disk full, network failure, reboot required, package rejected, and other errors. See setup log for details.</td></tr>
+<tr><td>1</td><td>Installation cancelled by user</td><td>User cancelled the installation before completion</td></tr>
+<tr><td>2</td><td>Application already exists</td><td>A previous version of the application is already installed on the device</td></tr>
+<tr><td>3</td><td>Installation already in progress</td><td>Another installation is already running; only one instance is allowed</td></tr>
+<tr><td>4</td><td>Disk space is full</td><td>Insufficient disk space to complete the installation</td></tr>
+<tr><td>5</td><td>Reboot required</td><td>A system restart is required before installation can proceed</td></tr>
+<tr><td>6</td><td>Network failure</td><td>A network-related error occurred (e.g., download failure, timeout)</td></tr>
+<tr><td>7</td><td>Package rejected during installation</td><td>Installation rejected due to a security policy on the device</td></tr>
+<tr><td>100</td><td>Miscellaneous install failure</td><td>Any other installation error not covered above. See setup log for details.</td></tr>
 </table>
-
-<h2>Application Exit Codes</h2>
-<p>STL to 3MF Converter.exe is a Windows Forms GUI application. It does not return meaningful exit codes when launched directly — it always exits with code 0.</p>
 
 <h2>Log File</h2>
 <p>Inno Setup logs are written to <code>%TEMP%\Setup Log*.txt</code> for troubleshooting installation failures.</p>
