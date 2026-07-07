@@ -1,0 +1,6 @@
+*.exe
+*.msix
+*.msixupload
+*.png
+.DS_Store
+Thumbs.db
